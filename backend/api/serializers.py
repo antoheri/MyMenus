@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Note
+from .models import Receipt
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -12,8 +12,8 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         return user
 
-class NoteSerializer(serializers.ModelSerializer):
+class ReceiptSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Note
-        fields = ["id", "title", "content", "created_at", "author"]
+        model = Receipt
+        fields = ["id", "entree", "plat_principal", "garniture", "produit_laitier_ou_divers", "dessert"]
         extra_kwargs = {"author": {"read_only": True}}
