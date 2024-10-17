@@ -30,3 +30,7 @@ Il est possble de sélectionner le nombre de plats souhaité et de créer une li
 4. Install the frontend dependencies
 
 `npm install`
+
+5. Start the server
+
+`npm run dev`
