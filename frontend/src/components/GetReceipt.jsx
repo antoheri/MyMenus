@@ -25,6 +25,8 @@ function Receipt({ route }) {
     }
   };
 
+  const goToHome = () => navigate("/");
+
   useEffect(() => {
     fetchReceipt();
   }, [route, navigate]);
@@ -33,23 +35,31 @@ function Receipt({ route }) {
     <Container>
       <Card>
         <CardContent>
-          <Typography variant="h3">Recette du jour</Typography>
+          <Typography variant="h3" mb={2}>
+            Menu du jour
+          </Typography>
           <Box>
             {receipt.map((r) => (
-              <Box key={r.id} mb={2}>
+              <Box key={r.id}>
                 {r.entree && (
-                  <Typography variant="body1">
+                  <Typography variant="body1" mb={1}>
                     <strong>Entrée:</strong> {r.entree}
                   </Typography>
                 )}
                 {r.plat_principal && (
-                  <Typography variant="body1">
+                  <Typography variant="body1" mb={1}>
                     <strong>Plat principal:</strong> {r.plat_principal}
                   </Typography>
                 )}
                 {r.garniture && (
-                  <Typography variant="body1">
+                  <Typography variant="body1" mb={1}>
                     <strong>Garniture:</strong> {r.garniture}
+                  </Typography>
+                )}
+                {r.produit_laitier_ou_divers && (
+                  <Typography variant="body1" mb={1}>
+                    <strong>Produit laitier ou divers:</strong>{" "}
+                    {r.produit_laitier_ou_divers}
                   </Typography>
                 )}
                 {r.dessert && (
@@ -62,10 +72,16 @@ function Receipt({ route }) {
           </Box>
         </CardContent>
       </Card>
-      <Button variant="contained" onClick={fetchReceipt}>
-        {" "}
-        Une autre ?
-      </Button>
+      <Box mt={2} display="flex" justifyContent="center">
+        <Box mr={2}>
+          <Button variant="contained" onClick={fetchReceipt}>
+            Une autre ?
+          </Button>
+        </Box>
+        <Button variant="contained" color="secondary" onClick={goToHome}>
+          Retour à l'accueil
+        </Button>
+      </Box>
     </Container>
   );
 }
