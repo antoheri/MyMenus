@@ -14,5 +14,5 @@ def import_receipt(file):
                 dessert = row['Dessert']
             )
 def run(): 
-    csv_file_path = "C:\\Users\\vsi.client\\Desktop\\recettes\\backend\\api\\menus.csv"
+    csv_file_path = "/home/tottino/Documents/projects/recettes-1/backend/api/menus.csv"
     import_receipt(csv_file_path)

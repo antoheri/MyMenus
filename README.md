@@ -10,6 +10,23 @@ Il est possble de sélectionner le nombre de plats souhaité et de créer une li
 **Backend** : Django
 **Frontend**: React
 
-## env
+## Set up
 
-VITE_API_URL="http://127.0.0.1:8000"
+1. Create a virtual environment
+
+`python3 -m venv .venv`
+
+2. Activate the environment
+
+`source .venv/bin/activate`
+
+3. Install requirements
+
+`pip install -r requirements.txt`
+
+3. Create a .env file into the frontend folder and define the api url :
+   `VITE_API_URL="http://127.0.0.1:8000"`
+
+4. Install the frontend dependencies
+
+`npm install`
