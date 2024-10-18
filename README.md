@@ -28,14 +28,14 @@ If you want to contribute to the project, please follows guilines of [CONTRIBUTI
 
 `pip install -r requirements.txt`
 
-3. Create a .env file into the frontend folder and define the api url :
+4. Create a .env file into the frontend folder and define the api url :
    `VITE_API_URL="http://127.0.0.1:8000"`
 
-4. Install the frontend dependencies
+5. Install the frontend dependencies
 
 `npm install`
 
-5. Start the servers
+6. Start the servers
 
 `npm run dev`
 
