@@ -1,4 +1,4 @@
-# Recettes
+# MyMenus
 
 ## Projet
 
