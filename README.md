@@ -7,7 +7,12 @@ Ce projet a pour but de regrouper un grand nombre de plats afin d'en proposer al
 ## Technologies
 
 **Backend** : Django
+
 **Frontend**: React
+
+## Contribitions
+
+If you want to contribute to the project, please follows guilines of [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Set up
 
@@ -30,6 +35,8 @@ Ce projet a pour but de regrouper un grand nombre de plats afin d'en proposer al
 
 `npm install`
 
-5. Start the server
+5. Start the servers
 
 `npm run dev`
+
+`python3 manage.py runserver`
