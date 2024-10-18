@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.db.models.functions import Random
 from django.contrib.auth.models import User
 from rest_framework import generics
-from .serializers import UserSerializer, ReceiptSerializer
+from .serializers import UserSerializer, ReceiptSerializer, FavouriteSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from .models import Receipt
+from .models import Receipt, Favourite
 
 # Display the list of all receipts
 class ReceiptsList(generics.ListCreateAPIView):
@@ -52,3 +52,22 @@ class CreateReceiptView(generics.CreateAPIView):
     queryset = Receipt.objects.all()
     serializer_class = ReceiptSerializer
     permission_classes = [IsAuthenticated]
+
+class AddFavouriteView(generics.CreateAPIView):
+   queryset = Favourite.objects.all()
+   serializer_class = FavouriteSerializer
+   permission_classes = [IsAuthenticated]
+   
+   def perform_create(self, serializer):
+         if serializer.is_valid():
+              serializer.save(user=self.request.user)
+         else:
+              print(serializer.errors)
+
+class ListFavouriteView(generics.ListAPIView):
+    serializer_class = FavouriteSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Favourite.objects.filter(user=self.request.user)
