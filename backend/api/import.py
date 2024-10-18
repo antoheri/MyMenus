@@ -1,6 +1,7 @@
 import csv
 from .models import Receipt
 
+# Script to import the CSV file into the database
 def import_receipt(file):
     with open(file, 'r', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f, delimiter=';')

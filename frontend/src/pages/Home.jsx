@@ -8,7 +8,7 @@ function Home() {
   return (
     <Container maxWidth="sm" style={{ textAlign: "center", padding: "20px" }}>
       <Typography variant="h2" component="h1" gutterBottom>
-        Bienvenue sur <strong>Recettes</strong>
+        Bienvenue sur <strong>My Menus</strong>
       </Typography>
       <Typography variant="body1" component="p">
         Ce projet a pour but de regrouper un grand nombre de plats afin d'en

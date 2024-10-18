@@ -22,14 +22,17 @@ function App() {
     <div className="app-background">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          {/* Commented out for later usage of login and register
-        <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>*/}
-          {/*<Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/register" element={<RegisterAndLogout />} />*/}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          ></Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/register" element={<RegisterAndLogout />} />
           <Route path="/receipt" element={<Receipt />} />
           <Route path="*" element={<NotFound />}></Route>
         </Routes>

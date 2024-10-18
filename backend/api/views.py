@@ -6,21 +6,21 @@ from .serializers import UserSerializer, ReceiptSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Receipt
 
-
-# Create your views here.
+# Display the list of all receipts
 class ReceiptsList(generics.ListCreateAPIView):
     serializer_class = ReceiptSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Receipt.objects.all()
 
+# Display the details of a randomly selected receipt
 class RandomReceipt(generics.ListAPIView):
     serializer_class = ReceiptSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         return Receipt.objects.order_by(Random())[:1]
 
-
+# Display the list of all receipts created by the user (not implemented)
 class ReceiptFavouriteList(generics.ListCreateAPIView):
     serializer_class = ReceiptSerializer
     permission_classes = [IsAuthenticated]
@@ -47,3 +47,8 @@ class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
+
+class CreateReceiptView(generics.CreateAPIView):
+    queryset = Receipt.objects.all()
+    serializer_class = ReceiptSerializer
+    permission_classes = [IsAuthenticated]
