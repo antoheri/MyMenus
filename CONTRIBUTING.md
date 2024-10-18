@@ -1,4 +1,4 @@
-# Contributing to Recettes
+# Contributing to MyMenus
 
 First of all, thank you for taking the time to contribute! 🎉
 
