@@ -9,6 +9,7 @@ import {
   Container,
   Box,
 } from "@mui/material";
+import PropTypes from "prop-types";
 
 function Receipt({ route }) {
   const [receipt, setReceipt] = useState([]);
@@ -85,5 +86,8 @@ function Receipt({ route }) {
     </Container>
   );
 }
+Receipt.propTypes = {
+  route: PropTypes.string.isRequired,
+};
 
 export default Receipt;

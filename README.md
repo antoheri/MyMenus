@@ -28,10 +28,16 @@ If you want to contribute to the project, please follows guilines of [CONTRIBUTI
 
 `pip install -r requirements.txt`
 
-4. Create a .env file into the frontend folder and define the api url :
+4. Import the data in DB
+
+`python3 manage.py shell`
+`from data import import_receipts_from_csv`
+`import_receipts_from_csv('api/menus.csv')`
+
+6. Create a .env file into the frontend folder and define the api url :
    `VITE_API_URL="http://127.0.0.1:8000"`
 
-5. Install the frontend dependencies
+7. Install the frontend dependencies
 
 `npm install`
 
