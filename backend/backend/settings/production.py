@@ -31,11 +31,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'mymenus.antoheri.ch',
-    'www.mymenus.antoheri.ch',
-    '152.67.94.40'
+  '*',
 ]
 
 REST_FRAMEWORK = {
